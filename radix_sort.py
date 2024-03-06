@@ -13,7 +13,6 @@ def find_max(arr):
 def counting_sort(arr, pos):
     size = len(arr)
     count = [0] * 10
-
     for i in range(size):
         count[(arr[i] // pos) % 10] += 1
 
