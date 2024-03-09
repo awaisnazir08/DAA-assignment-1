@@ -29,6 +29,7 @@ def merge(array, left, middle, right):
     then we iterate through both the arrays and put the elements back in the original array in the sorted order
     afterwards, if there are still elements remaining in the sub arrays, we put them back in the original array
     '''
+    # making two arrays 
     a1 = array[left : middle + 1]
     a2 = array[middle + 1 : right + 1]
 
@@ -36,7 +37,8 @@ def merge(array, left, middle, right):
     n2 = len(a2)
     i = j = 0
     k = left
-
+    
+    #inserting elements from the new created two arrays into the original array in ascending order
     while i < n1 and j < n2:
         if a1[i] < a2[j]:
             array[k] = a1[i]
@@ -46,6 +48,7 @@ def merge(array, left, middle, right):
             j += 1
         k += 1
 
+    #if elements still left in either array, insert them into the original array
     while i < n1:
         array[k] = a1[i]
         i += 1

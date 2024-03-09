@@ -17,6 +17,10 @@ def heapify(arr, n, i):
     the heap. The function is used to maintain the heap property in a binary tree represented as an
     array. The `heapify` function compares the node at index `i` with its left and
     """
+# The code snippet you provided is implementing the `heapify` function in Python. This function is a
+# crucial part of the heap sort algorithm. Here's a breakdown of what each part of the code is doing:
+# if the parent is smaller than any of its childs, then swap the parent with the child, keep doing this
+# until the heap property is achieved!
     largest = i
     while True:
         left_child = 2 * i 
@@ -46,10 +50,14 @@ def heap_sort(arr):
     n = len(arr)
 
     # Build a max heap
+    # calling the heapify function for only n to (n/2) elements which are the non-leaf nodes, 
+    # after this, for the leaf nodes, the heapify 
+    # propery will automatically be achieved!
     for i in range(n // 2, -1, -1):
         heapify(arr, n, i)
 
-    # Extract elements one by one
+    # Extract elements one by one, and swap them with the last element
+    # since the heap property would be disturbed, the heapify function is called again and again
     for i in range(n - 1, 0, -1):
         arr[i], arr[0] = arr[0], arr[i]
         heapify(arr, i, 0)
@@ -67,12 +75,3 @@ array_sizes, times = analyze_algorithm.time_of_algorithm(heap_sort, 'Heap Sort')
 # `heap_sort` algorithm to sort arrays of different sizes. The plot will help in understanding the
 # time complexity of the `heap_sort` algorithm and how it scales with different input sizes.
 plotting.createPlot(array_sizes, times, 'Heap Sort')
-
-
-# arr = [12, 11, 13, 5, 6, 7, -1, 4, 3, 0, 0.80, 8, -42, 9, 38]
-
-# print("Original array:", arr)
-
-# heap_sort(arr)
-
-# print("Sorted array:", arr)

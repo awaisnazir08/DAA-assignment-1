@@ -33,12 +33,8 @@ def insertionSort(arr):
 array_sizes, times = analyze_algorithm.time_of_algorithm(insertionSort, 'Insertion Sort')
 
 
-
-# The line `plotting.createPlot(array_sizes, times, 'Insertion Sort')` is calling a function named
-# `createPlot` from the `plotting` module. This function is used to create a plot or graph to
-# visualize the relationship between the array sizes and the corresponding time taken by the
-# `insertionSort` function to sort arrays of those sizes. The plot will help in understanding the time
-# complexity of the `insertionSort` algorithm and how it performs as the input size increases. The
-# title of the plot will be 'Insertion Sort', indicating that it represents the time complexity
-# analysis of the insertion sort algorithm.
+# This function is used to create a plot or graph to visualize the relationship between the array 
+# sizes and the corresponding time taken by the `insertionSort` algorithm to sort arrays of those sizes. 
+# The plot will help in understanding the time complexity of the `insertionSort` algorithm and how 
+# it performs as the input size increases.
 plotting.createPlot(array_sizes, times, 'Insertion Sort')

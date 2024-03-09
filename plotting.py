@@ -15,8 +15,8 @@ def createPlot(sizes, times, name):
     used to customize the title and legend of the plot based on the data being visualized
     """
     plt.figure(figsize=(12, 8))  # Set the figure size before creating the plot
-    sns.set_style("darkgrid") 
-    sns.lineplot(x=sizes, y=times, marker='o', label=name)
+    sns.set_style("darkgrid")
+    sns.lineplot(x=sizes, y=times, marker='o', label=name, color = 'green')
     plt.xlabel('Array Size (n)')
     plt.ylabel('Execution Time (seconds)')
     plt.title(f'{name} Time Complexity Analysis')

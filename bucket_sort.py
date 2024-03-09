@@ -3,7 +3,7 @@
 import analyze_algorithm
 import plotting
 
-
+#USING the insertion sort to sort each of the buckets
 def insertionSort(arr):
     """
     The `insertionSort` function implements the insertion sort algorithm to sort an array in ascending
@@ -37,9 +37,10 @@ def insertionSort(arr):
     """
 def bucketSort(arr):
     n = len(arr)
+    #creating an empty list to store all the buckets inside it
     buckets = []
 
-    # creating an empty bucket
+    # creating empty buckets
     for _ in range(n):
         buckets.append([])
 
@@ -51,7 +52,7 @@ def bucketSort(arr):
     for i in range(n):
         insertionSort(buckets[i])
 
-    # concatenating the sorted buckets together
+    #concatenating the sorted buckets together
     result = []
     for i in range(n):
         result.extend(buckets[i])
@@ -64,15 +65,3 @@ def bucketSort(arr):
 array_sizes, times = analyze_algorithm.time_of_algorithm(bucketSort, 'Bucket Sort')
 
 plotting.createPlot(array_sizes, times, 'Bucket Sort')
-
-# Example Usage
-# arr = [0.78, 0.17, 0.39, 0.26, 0.72, 0.94, 0.21, 0.12, 0.23, 0.68]
-
-# print("Original Array:")
-# print(arr)
-
-# # Perform Bucket Sort
-# sorted_array = bucketSort(arr)
-
-# print("Sorted Array using Bucket Sort:")
-# print(sorted_array)
